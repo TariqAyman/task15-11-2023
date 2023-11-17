@@ -1,0 +1,2022 @@
+{
+	"info": {
+		"_postman_id": "5fad01e6-08bb-4108-9f27-bd3103266a6b",
+		"name": "Task 15/11/2023 | Coding Exercise - Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2573933"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@test.net",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}register",
+							"host": [
+								"{{baseURL}}register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}login",
+							"host": [
+								"{{baseURL}}login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@admin.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}login",
+									"host": [
+										"{{baseURL}}login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:19:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:19:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Test Admin\",\n            \"email\": \"admin@admin.com\",\n            \"email_verified_at\": \"2023-11-15T19:45:26.000000Z\",\n            \"user_type\": \"admin\",\n            \"deleted_at\": null,\n            \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n            \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n        },\n        \"token\": \"11|WK4dZ83zlmNQ69zDJJg3lUgPdZ1fU7NgsmRjBiQK5a57d691\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payments | Admin only",
+			"item": [
+				{
+					"name": "List Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}payments",
+							"host": [
+								"{{baseURL}}payments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Payments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}payments",
+									"host": [
+										"{{baseURL}}payments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 2,\n                \"created_by\": \"Alexa Sawayn\",\n                \"amount\": 22,\n                \"paid_on\": \"11/11/2023 12:00 am\",\n                \"details\": \"ddd\",\n                \"created_at\": \"15/11/2023 07:27 pm\",\n                \"transaction_id\": 5\n            },\n            {\n                \"id\": 4,\n                \"created_by\": \"Prof. Julio Wehner\",\n                \"amount\": 129.65,\n                \"paid_on\": \"30/10/2023 08:34 pm\",\n                \"details\": \"Accusamus repudiandae facilis molestiae est voluptatum.\",\n                \"created_at\": \"15/11/2023 07:27 pm\",\n                \"transaction_id\": 14\n            },\n            {\n                \"id\": 5,\n                \"created_by\": \"Mr. Leopoldo Little DDS\",\n                \"amount\": 96.76,\n                \"paid_on\": \"23/10/2023 01:51 pm\",\n                \"details\": \"Corrupti tempora voluptas tempore voluptatibus non.\",\n                \"created_at\": \"15/11/2023 07:27 pm\",\n                \"transaction_id\": 15\n            },\n            {\n                \"id\": 6,\n                \"created_by\": \"Lucile Wuckert\",\n                \"amount\": 147.88,\n                \"paid_on\": \"06/11/2023 05:36 pm\",\n                \"details\": \"Est minus quia quaerat consequatur dolores.\",\n                \"created_at\": \"15/11/2023 07:27 pm\",\n                \"transaction_id\": 16\n            },\n            {\n                \"id\": 7,\n                \"created_by\": \"Newell Wyman\",\n                \"amount\": 154.16,\n                \"paid_on\": \"01/11/2023 08:12 pm\",\n                \"details\": \"Dolores sunt non consequuntur occaecati autem.\",\n                \"created_at\": \"15/11/2023 07:27 pm\",\n                \"transaction_id\": 17\n            },\n            {\n                \"id\": 8,\n                \"created_by\": \"Adan Wisozk\",\n                \"amount\": 11111,\n                \"paid_on\": \"25/10/2023 12:00 am\",\n                \"details\": \"qqqqqqqqqqqqqqqqq\",\n                \"created_at\": \"15/11/2023 07:27 pm\",\n                \"transaction_id\": 18\n            },\n            {\n                \"id\": 11,\n                \"created_by\": \"Test Admin\",\n                \"amount\": 22,\n                \"paid_on\": \"11/11/2023 12:00 am\",\n                \"details\": \"ddd\",\n                \"created_at\": \"17/11/2023 06:59 pm\",\n                \"transaction_id\": 5\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/payments?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/payments?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/payments?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/payments\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 7,\n        \"total\": 7\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Payment by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}payments/4",
+							"host": [
+								"{{baseURL}}payments"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Payment by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}payments/4",
+									"host": [
+										"{{baseURL}}payments"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"id\": 4,\n        \"created_by\": 43,\n        \"transaction_id\": 14,\n        \"amount\": 129.65,\n        \"paid_on\": \"2023-10-30T20:42:34.000000Z\",\n        \"details\": \"Accusamus repudiandae facilis molestiae est voluptatum.\",\n        \"deleted_at\": null,\n        \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n        \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Payment by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}payments/3",
+							"host": [
+								"{{baseURL}}payments"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Payment by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}payments/3",
+									"host": [
+										"{{baseURL}}payments"
+									],
+									"path": [
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": \"Successfully deleted!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "transaction_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "paid_on",
+									"value": "2023/11/11",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "ddd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}payments",
+							"host": [
+								"{{baseURL}}payments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Payment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "22",
+											"type": "text"
+										},
+										{
+											"key": "transaction_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "paid_on",
+											"value": "2023/11/11",
+											"type": "text"
+										},
+										{
+											"key": "details",
+											"value": "ddd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}payments",
+									"host": [
+										"{{baseURL}}payments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:19:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:19:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"amount\": 22,\n        \"transaction_id\": 5,\n        \"paid_on\": \"2023-11-11T00:00:00.000000Z\",\n        \"details\": \"ddd\",\n        \"created_by\": 1,\n        \"updated_at\": \"2023-11-17T19:19:00.000000Z\",\n        \"created_at\": \"2023-11-17T19:19:00.000000Z\",\n        \"id\": 12\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "transaction_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "paid_on",
+									"value": "2023/11/11",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "ddd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}payments/2",
+							"host": [
+								"{{baseURL}}payments"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Payment",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "amount",
+											"value": "22",
+											"type": "text"
+										},
+										{
+											"key": "transaction_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "paid_on",
+											"value": "2023/11/11",
+											"type": "text"
+										},
+										{
+											"key": "details",
+											"value": "ddd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}payments/2",
+									"host": [
+										"{{baseURL}}payments"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:19:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:19:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "54"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"id\": 2,\n        \"created_by\": 37,\n        \"transaction_id\": 5,\n        \"amount\": 22,\n        \"paid_on\": \"2023-11-11T00:00:00.000000Z\",\n        \"details\": \"ddd\",\n        \"deleted_at\": null,\n        \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n        \"updated_at\": \"2023-11-17T18:37:17.000000Z\",\n        \"transaction\": {\n            \"id\": 5,\n            \"payer_id\": 20,\n            \"created_by\": 21,\n            \"amount\": 300.95,\n            \"due_on\": \"2023-11-25T00:00:00.000000Z\",\n            \"vat\": 13.64,\n            \"is_vat_inclusive\": false,\n            \"status\": \"outstanding\",\n            \"total_paid_amount\": 415.12,\n            \"deleted_at\": null,\n            \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n            \"updated_at\": \"2023-11-17T18:39:15.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transactions | Admin only",
+			"item": [
+				{
+					"name": "List Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}transactions",
+							"host": [
+								"{{baseURL}}transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}transactions",
+									"host": [
+										"{{baseURL}}transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:17:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:17:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"payer\": \"Emery Hermiston\",\n                \"created_by\": \"Tyrel Smitham\",\n                \"amount\": 470.89,\n                \"due_on\": \"24/11/2023\",\n                \"vat\": 8.57,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"paid\",\n                \"total_paid_amount\": 374.66,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 2,\n                \"payer\": \"Fletcher Friesen\",\n                \"created_by\": \"Mr. Cleo Lockman\",\n                \"amount\": 128.28,\n                \"due_on\": \"29/11/2023\",\n                \"vat\": 16.44,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"paid\",\n                \"total_paid_amount\": 25.98,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 4,\n                \"payer\": \"Jettie Hahn\",\n                \"created_by\": \"Aubrey Osinski\",\n                \"amount\": 400.5,\n                \"due_on\": \"25/11/2023\",\n                \"vat\": 6.33,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 237.59,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 5,\n                \"payer\": \"Dr. Jena Walter\",\n                \"created_by\": \"Prof. Florine Altenwerth\",\n                \"amount\": 300.95,\n                \"due_on\": \"25/11/2023\",\n                \"vat\": 13.64,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"outstanding\",\n                \"total_paid_amount\": 415.12,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 6,\n                \"payer\": \"Dr. Orland O'Kon\",\n                \"created_by\": \"Dr. Brennon Skiles\",\n                \"amount\": 139.38,\n                \"due_on\": \"27/11/2023\",\n                \"vat\": 7.32,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"paid\",\n                \"total_paid_amount\": 300.83,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 7,\n                \"payer\": \"Dr. Kristian Murray I\",\n                \"created_by\": \"Kim Mann\",\n                \"amount\": 74.89,\n                \"due_on\": \"24/11/2023\",\n                \"vat\": 15.33,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 335.47,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 8,\n                \"payer\": \"Mr. Lorenza Harris\",\n                \"created_by\": \"Liana Mraz\",\n                \"amount\": 363.08,\n                \"due_on\": \"23/11/2023\",\n                \"vat\": 5.67,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"paid\",\n                \"total_paid_amount\": 421.35,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 9,\n                \"payer\": \"Tessie Wyman\",\n                \"created_by\": \"Dayna Halvorson\",\n                \"amount\": 87.58,\n                \"due_on\": \"01/12/2023\",\n                \"vat\": 19.71,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"outstanding\",\n                \"total_paid_amount\": 85.77,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 10,\n                \"payer\": \"Tess Balistreri\",\n                \"created_by\": \"Kenna Dach\",\n                \"amount\": 93.18,\n                \"due_on\": \"09/12/2023\",\n                \"vat\": 11.84,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"paid\",\n                \"total_paid_amount\": 325.29,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 11,\n                \"payer\": \"Darion Terry DVM\",\n                \"created_by\": \"Pansy Homenick\",\n                \"amount\": 190.97,\n                \"due_on\": \"20/11/2023\",\n                \"vat\": 15.8,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"outstanding\",\n                \"total_paid_amount\": 397.97,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 12,\n                \"payer\": \"Marlen Glover DVM\",\n                \"created_by\": \"Ms. Verlie Heaney\",\n                \"amount\": 162.4,\n                \"due_on\": \"18/11/2023\",\n                \"vat\": 18.12,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 7.28,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 13,\n                \"payer\": \"Mrs. Angie Davis III\",\n                \"created_by\": \"Miss Antonette Hirthe PhD\",\n                \"amount\": 429.35,\n                \"due_on\": \"18/11/2023\",\n                \"vat\": 14.2,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 270.74,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 14,\n                \"payer\": \"Ressie Fisher\",\n                \"created_by\": \"Elias Block\",\n                \"amount\": 302.46,\n                \"due_on\": \"13/12/2023\",\n                \"vat\": 16.63,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"outstanding\",\n                \"total_paid_amount\": 172.9,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 15,\n                \"payer\": \"Mara Huel\",\n                \"created_by\": \"Prof. Sylvan Rath PhD\",\n                \"amount\": 367.93,\n                \"due_on\": \"26/11/2023\",\n                \"vat\": 8.97,\n                \"is_vat_inclusive\": \"Yes\",\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 430.64,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            },\n            {\n                \"id\": 16,\n                \"payer\": \"Kristy Wisozk\",\n                \"created_by\": \"Theron Schumm IV\",\n                \"amount\": 74.47,\n                \"due_on\": \"22/11/2023\",\n                \"vat\": 9.43,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"outstanding\",\n                \"total_paid_amount\": 479.95,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/transactions?page=1\",\n        \"from\": 1,\n        \"last_page\": 2,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/transactions?page=2\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/transactions?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/transactions?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/transactions?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/transactions?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/transactions\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 15,\n        \"total\": 24\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transaction by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}transactions/5",
+							"host": [
+								"{{baseURL}}transactions"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Transaction by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}transactions/5",
+									"host": [
+										"{{baseURL}}transactions"
+									],
+									"path": [
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:17:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:17:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"transaction\": {\n            \"id\": 5,\n            \"payer_id\": 20,\n            \"created_by\": {\n                \"id\": 21,\n                \"name\": \"Prof. Florine Altenwerth\",\n                \"email\": \"rmante@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            \"amount\": 300.95,\n            \"due_on\": \"2023-11-25T00:00:00.000000Z\",\n            \"vat\": 13.64,\n            \"is_vat_inclusive\": false,\n            \"status\": \"outstanding\",\n            \"total_paid_amount\": 415.12,\n            \"deleted_at\": null,\n            \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n            \"updated_at\": \"2023-11-17T18:39:15.000000Z\",\n            \"payer\": {\n                \"id\": 20,\n                \"name\": \"Dr. Jena Walter\",\n                \"email\": \"whand@example.com\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            \"payments\": [\n                {\n                    \"id\": 2,\n                    \"created_by\": 37,\n                    \"transaction_id\": 5,\n                    \"amount\": 22,\n                    \"paid_on\": \"2023-11-11T00:00:00.000000Z\",\n                    \"details\": \"ddd\",\n                    \"deleted_at\": null,\n                    \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                    \"updated_at\": \"2023-11-17T18:37:17.000000Z\"\n                },\n                {\n                    \"id\": 11,\n                    \"created_by\": 1,\n                    \"transaction_id\": 5,\n                    \"amount\": 22,\n                    \"paid_on\": \"2023-11-11T00:00:00.000000Z\",\n                    \"details\": \"ddd\",\n                    \"deleted_at\": null,\n                    \"created_at\": \"2023-11-17T18:35:59.000000Z\",\n                    \"updated_at\": \"2023-11-17T18:35:59.000000Z\"\n                }\n            ]\n        },\n        \"users\": {\n            \"2\": \"Sallie Muller\",\n            \"5\": \"Alvah Runte\",\n            \"9\": \"Coty Schuppe\",\n            \"10\": \"Emelie Legros\",\n            \"13\": \"Tyrel Smitham\",\n            \"14\": \"Fletcher Friesen\",\n            \"18\": \"Jettie Hahn\",\n            \"20\": \"Dr. Jena Walter\",\n            \"22\": \"Dr. Orland O'Kon\",\n            \"27\": \"Liana Mraz\",\n            \"30\": \"Tess Balistreri\",\n            \"32\": \"Darion Terry DVM\",\n            \"33\": \"Pansy Homenick\",\n            \"34\": \"Dr. Jake Davis DVM\",\n            \"37\": \"Alexa Sawayn\",\n            \"38\": \"Mrs. Angie Davis III\",\n            \"39\": \"Miss Antonette Hirthe PhD\",\n            \"44\": \"Mara Huel\",\n            \"45\": \"Prof. Sylvan Rath PhD\",\n            \"46\": \"Mr. Leopoldo Little DDS\",\n            \"47\": \"Kristy Wisozk\",\n            \"49\": \"Lucile Wuckert\",\n            \"50\": \"Elenora Kuvalis\",\n            \"51\": \"Bartholome Kunde\",\n            \"53\": \"Miss Lora Schowalter Jr.\",\n            \"54\": \"Mr. Rico Lueilwitz\",\n            \"57\": \"Prof. Dax Roob\",\n            \"61\": \"Mr. Elliott Towne\",\n            \"62\": \"test\",\n            \"63\": \"test\",\n            \"64\": \"test\",\n            \"65\": \"test\",\n            \"66\": \"test\",\n            \"67\": \"test\",\n            \"68\": \"test\",\n            \"69\": \"test\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete transaction by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}transactions/6",
+							"host": [
+								"{{baseURL}}transactions"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete transaction by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}transactions/6",
+									"host": [
+										"{{baseURL}}transactions"
+									],
+									"path": [
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": \"Successfully deleted!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "payer_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "due_on",
+									"value": "2023/11/11",
+									"type": "text"
+								},
+								{
+									"key": "vat",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "is_vat_inclusive",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}transactions",
+							"host": [
+								"{{baseURL}}transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create transaction",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "22",
+											"type": "text"
+										},
+										{
+											"key": "payer_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "due_on",
+											"value": "2023/11/11",
+											"type": "text"
+										},
+										{
+											"key": "vat",
+											"value": "11",
+											"type": "text"
+										},
+										{
+											"key": "is_vat_inclusive",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}transactions",
+									"host": [
+										"{{baseURL}}transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "54"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"amount\": 22,\n        \"payer_id\": 1,\n        \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n        \"vat\": 11,\n        \"is_vat_inclusive\": true,\n        \"created_by\": 1,\n        \"total_paid_amount\": 0,\n        \"status\": \"overdue\",\n        \"updated_at\": \"2023-11-17T19:18:11.000000Z\",\n        \"created_at\": \"2023-11-17T19:18:11.000000Z\",\n        \"id\": 26\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update transaction",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "amount",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "payer_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "due_on",
+									"value": "2023/11/11",
+									"type": "text"
+								},
+								{
+									"key": "vat",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "is_vat_inclusive",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}transactions/25",
+							"host": [
+								"{{baseURL}}transactions"
+							],
+							"path": [
+								"25"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update transaction",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "amount",
+											"value": "22",
+											"type": "text"
+										},
+										{
+											"key": "payer_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "due_on",
+											"value": "2023/11/11",
+											"type": "text"
+										},
+										{
+											"key": "vat",
+											"value": "11",
+											"type": "text"
+										},
+										{
+											"key": "is_vat_inclusive",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}transactions/25",
+									"host": [
+										"{{baseURL}}transactions"
+									],
+									"path": [
+										"25"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:18:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "53"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"id\": 25,\n        \"payer_id\": 1,\n        \"created_by\": {\n            \"id\": 1,\n            \"name\": \"Test Admin\",\n            \"email\": \"admin@admin.com\",\n            \"email_verified_at\": \"2023-11-15T19:45:26.000000Z\",\n            \"user_type\": \"admin\",\n            \"deleted_at\": null,\n            \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n            \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n        },\n        \"amount\": 22,\n        \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n        \"vat\": 11,\n        \"is_vat_inclusive\": true,\n        \"status\": \"overdue\",\n        \"total_paid_amount\": 0,\n        \"deleted_at\": null,\n        \"created_at\": \"2023-11-17T18:51:04.000000Z\",\n        \"updated_at\": \"2023-11-17T18:51:04.000000Z\",\n        \"payer\": {\n            \"id\": 1,\n            \"name\": \"Test Admin\",\n            \"email\": \"admin@admin.com\",\n            \"email_verified_at\": \"2023-11-15T19:45:26.000000Z\",\n            \"user_type\": \"admin\",\n            \"deleted_at\": null,\n            \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n            \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n        },\n        \"payments\": []\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transactions | User only",
+			"item": [
+				{
+					"name": "List Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}transactions",
+							"host": [
+								"{{baseURL}}transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}transactions",
+									"host": [
+										"{{baseURL}}transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:17:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:17:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 16,\n                \"payer\": \"Kristy Wisozk\",\n                \"created_by\": \"Theron Schumm IV\",\n                \"amount\": 74.47,\n                \"due_on\": \"22/11/2023\",\n                \"vat\": 9.43,\n                \"is_vat_inclusive\": \"No\",\n                \"status\": \"outstanding\",\n                \"total_paid_amount\": 479.95,\n                \"created_at\": \"15/11/2023 07:27 pm\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/transactions?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/transactions?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/transactions?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/transactions\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transaction by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}transactions/16",
+							"host": [
+								"{{baseURL}}transactions"
+							],
+							"path": [
+								"16"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Transaction by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}transactions/16",
+									"host": [
+										"{{baseURL}}transactions"
+									],
+									"path": [
+										"16"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:11:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:11:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"transaction\": {\n            \"id\": 16,\n            \"payer_id\": 47,\n            \"created_by\": {\n                \"id\": 48,\n                \"name\": \"Theron Schumm IV\",\n                \"email\": \"schimmel.robert@example.com\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            \"amount\": 74.47,\n            \"due_on\": \"2023-11-22T00:00:00.000000Z\",\n            \"vat\": 9.43,\n            \"is_vat_inclusive\": false,\n            \"status\": \"outstanding\",\n            \"total_paid_amount\": 479.95,\n            \"deleted_at\": null,\n            \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n            \"updated_at\": \"2023-11-15T19:45:27.000000Z\",\n            \"payer\": {\n                \"id\": 47,\n                \"name\": \"Kristy Wisozk\",\n                \"email\": \"legros.jermaine@example.com\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            \"payments\": [\n                {\n                    \"id\": 6,\n                    \"created_by\": 49,\n                    \"transaction_id\": 16,\n                    \"amount\": 147.88,\n                    \"paid_on\": \"2023-11-06T17:17:36.000000Z\",\n                    \"details\": \"Est minus quia quaerat consequatur dolores.\",\n                    \"deleted_at\": null,\n                    \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                    \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n                }\n            ]\n        },\n        \"users\": {\n            \"2\": \"Sallie Muller\",\n            \"5\": \"Alvah Runte\",\n            \"9\": \"Coty Schuppe\",\n            \"10\": \"Emelie Legros\",\n            \"13\": \"Tyrel Smitham\",\n            \"14\": \"Fletcher Friesen\",\n            \"18\": \"Jettie Hahn\",\n            \"20\": \"Dr. Jena Walter\",\n            \"22\": \"Dr. Orland O'Kon\",\n            \"27\": \"Liana Mraz\",\n            \"30\": \"Tess Balistreri\",\n            \"32\": \"Darion Terry DVM\",\n            \"33\": \"Pansy Homenick\",\n            \"34\": \"Dr. Jake Davis DVM\",\n            \"37\": \"Alexa Sawayn\",\n            \"38\": \"Mrs. Angie Davis III\",\n            \"39\": \"Miss Antonette Hirthe PhD\",\n            \"44\": \"Mara Huel\",\n            \"45\": \"Prof. Sylvan Rath PhD\",\n            \"46\": \"Mr. Leopoldo Little DDS\",\n            \"49\": \"Lucile Wuckert\",\n            \"50\": \"Elenora Kuvalis\",\n            \"51\": \"Bartholome Kunde\",\n            \"53\": \"Miss Lora Schowalter Jr.\",\n            \"54\": \"Mr. Rico Lueilwitz\",\n            \"57\": \"Prof. Dax Roob\",\n            \"61\": \"Mr. Elliott Towne\",\n            \"62\": \"test\",\n            \"63\": \"test\",\n            \"64\": \"test\",\n            \"65\": \"test\",\n            \"66\": \"test\",\n            \"67\": \"test\",\n            \"68\": \"test\",\n            \"69\": \"test\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users | Admin only",
+			"item": [
+				{
+					"name": "List Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}users",
+							"host": [
+								"{{baseURL}}users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}users",
+									"host": [
+										"{{baseURL}}users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Test Admin\",\n                \"email\": \"admin@admin.com\",\n                \"email_verified_at\": \"2023-11-15T19:45:26.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Sallie Muller\",\n                \"email\": \"dharber@example.com\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Ms. Cheyenne Murray\",\n                \"email\": \"rolfson.zoie@example.net\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Alvah Runte\",\n                \"email\": \"buckridge.rosina@example.net\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Melody Nienow\",\n                \"email\": \"samantha79@example.net\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Leo Conn\",\n                \"email\": \"elena46@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Golda Vandervort\",\n                \"email\": \"hpfannerstill@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Coty Schuppe\",\n                \"email\": \"murray.gulgowski@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Emelie Legros\",\n                \"email\": \"angela04@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Terrance Zemlak\",\n                \"email\": \"dbalistreri@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 12,\n                \"name\": \"Emery Hermiston\",\n                \"email\": \"wiza.lonie@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 13,\n                \"name\": \"Tyrel Smitham\",\n                \"email\": \"hkuhic@example.com\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 14,\n                \"name\": \"Fletcher Friesen\",\n                \"email\": \"courtney.friesen@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"user\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 15,\n                \"name\": \"Mr. Cleo Lockman\",\n                \"email\": \"agutkowski@example.net\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            },\n            {\n                \"id\": 16,\n                \"name\": \"Brandi Sipes\",\n                \"email\": \"shanny.wisoky@example.org\",\n                \"email_verified_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"user_type\": \"admin\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n                \"updated_at\": \"2023-11-15T19:45:27.000000Z\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/users?page=1\",\n        \"from\": 1,\n        \"last_page\": 5,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/users?page=5\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/users?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/users\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 15,\n        \"total\": 69\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Users by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}users/1",
+							"host": [
+								"{{baseURL}}users"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Users by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}users/1",
+									"host": [
+										"{{baseURL}}users"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"id\": 1,\n        \"name\": \"Test Admin\",\n        \"email\": \"admin@admin.com\",\n        \"email_verified_at\": \"2023-11-15T19:45:26.000000Z\",\n        \"user_type\": \"admin\",\n        \"deleted_at\": null,\n        \"created_at\": \"2023-11-15T19:45:27.000000Z\",\n        \"updated_at\": \"2023-11-15T19:45:27.000000Z\",\n        \"transactions\": [\n            {\n                \"id\": 24,\n                \"payer_id\": 1,\n                \"created_by\": 1,\n                \"amount\": 22,\n                \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n                \"vat\": 11,\n                \"is_vat_inclusive\": true,\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 0,\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-17T18:50:41.000000Z\",\n                \"updated_at\": \"2023-11-17T18:50:41.000000Z\"\n            },\n            {\n                \"id\": 25,\n                \"payer_id\": 1,\n                \"created_by\": 1,\n                \"amount\": 22,\n                \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n                \"vat\": 11,\n                \"is_vat_inclusive\": true,\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 0,\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-17T18:51:04.000000Z\",\n                \"updated_at\": \"2023-11-17T18:51:04.000000Z\"\n            }\n        ],\n        \"created_payment\": [\n            {\n                \"id\": 11,\n                \"created_by\": 1,\n                \"transaction_id\": 5,\n                \"amount\": 22,\n                \"paid_on\": \"2023-11-11T00:00:00.000000Z\",\n                \"details\": \"ddd\",\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-17T18:35:59.000000Z\",\n                \"updated_at\": \"2023-11-17T18:35:59.000000Z\"\n            }\n        ],\n        \"created_transaction\": [\n            {\n                \"id\": 21,\n                \"payer_id\": 61,\n                \"created_by\": 1,\n                \"amount\": 130,\n                \"due_on\": \"2023-02-01T00:00:00.000000Z\",\n                \"vat\": 12,\n                \"is_vat_inclusive\": true,\n                \"status\": \"unpaid\",\n                \"total_paid_amount\": 0,\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-16T21:18:13.000000Z\",\n                \"updated_at\": \"2023-11-16T21:29:05.000000Z\"\n            },\n            {\n                \"id\": 22,\n                \"payer_id\": 5,\n                \"created_by\": 1,\n                \"amount\": 22,\n                \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n                \"vat\": 11,\n                \"is_vat_inclusive\": true,\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 0,\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-17T18:49:23.000000Z\",\n                \"updated_at\": \"2023-11-17T18:49:23.000000Z\"\n            },\n            {\n                \"id\": 23,\n                \"payer_id\": 5,\n                \"created_by\": 1,\n                \"amount\": 22,\n                \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n                \"vat\": 11,\n                \"is_vat_inclusive\": true,\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 0,\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-17T18:50:00.000000Z\",\n                \"updated_at\": \"2023-11-17T18:50:00.000000Z\"\n            },\n            {\n                \"id\": 24,\n                \"payer_id\": 1,\n                \"created_by\": 1,\n                \"amount\": 22,\n                \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n                \"vat\": 11,\n                \"is_vat_inclusive\": true,\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 0,\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-17T18:50:41.000000Z\",\n                \"updated_at\": \"2023-11-17T18:50:41.000000Z\"\n            },\n            {\n                \"id\": 25,\n                \"payer_id\": 1,\n                \"created_by\": 1,\n                \"amount\": 22,\n                \"due_on\": \"2023-11-11T00:00:00.000000Z\",\n                \"vat\": 11,\n                \"is_vat_inclusive\": true,\n                \"status\": \"overdue\",\n                \"total_paid_amount\": 0,\n                \"deleted_at\": null,\n                \"created_at\": \"2023-11-17T18:51:04.000000Z\",\n                \"updated_at\": \"2023-11-17T18:51:04.000000Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}users/4",
+							"host": [
+								"{{baseURL}}users"
+							],
+							"path": [
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}users/4",
+									"host": [
+										"{{baseURL}}users"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": \"Successfully deleted!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "name",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "email@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}users",
+							"host": [
+								"{{baseURL}}users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "email@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "user_type",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}users",
+									"host": [
+										"{{baseURL}}users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:07:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"name\": \"name\",\n        \"email\": \"email@email.com\",\n        \"user_type\": \"admin\",\n        \"updated_at\": \"2023-11-17T19:07:52.000000Z\",\n        \"created_at\": \"2023-11-17T19:07:52.000000Z\",\n        \"id\": 71\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "name",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "email@email.com21",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}users/71",
+							"host": [
+								"{{baseURL}}users"
+							],
+							"path": [
+								"71"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "email@email.com21",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "user_type",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}users/71",
+									"host": [
+										"{{baseURL}}users"
+									],
+									"path": [
+										"71"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:08:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:08:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "53"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": {\n        \"id\": 71,\n        \"name\": \"name\",\n        \"email\": \"email@email.com21\",\n        \"email_verified_at\": null,\n        \"user_type\": \"admin\",\n        \"deleted_at\": null,\n        \"created_at\": \"2023-11-17T19:07:52.000000Z\",\n        \"updated_at\": \"2023-11-17T19:08:22.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Get Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}reports",
+							"host": [
+								"{{baseURL}}reports"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2023/11/11",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2023/11/11",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}reports",
+									"host": [
+										"{{baseURL}}reports"
+									],
+									"query": [
+										{
+											"key": "start_date",
+											"value": "2023/11/11",
+											"disabled": true
+										},
+										{
+											"key": "end_date",
+											"value": "2023/11/11",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:06:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Nov 2023 19:06:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"records\": [\n        {\n            \"month\": 2,\n            \"year\": 2023,\n            \"unpaid\": \"130.00\",\n            \"paid\": \"0.00\",\n            \"outstanding\": \"0.00\",\n            \"overdue\": \"0.00\"\n        },\n        {\n            \"month\": 11,\n            \"year\": 2023,\n            \"unpaid\": \"0.00\",\n            \"paid\": \"1101.63\",\n            \"outstanding\": \"1051.44\",\n            \"overdue\": \"1710.41\"\n        },\n        {\n            \"month\": 12,\n            \"year\": 2023,\n            \"unpaid\": \"0.00\",\n            \"paid\": \"93.18\",\n            \"outstanding\": \"390.04\",\n            \"overdue\": \"590.77\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://127.0.0.1:8000/api/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "6|K2zSF2BaHjWoaFM7GCuOqiTK3ggE39pnq9wO2Wkh0b39b0ad",
+			"type": "string"
+		},
+		{
+			"key": "userToken",
+			"value": "8|uNbB4JZexzy1EwyOn0T0rzwTpWkY0SovXzaM9pTH1e9a1d0e",
+			"type": "string"
+		}
+	]
+}
