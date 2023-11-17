@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportsController;
+use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -80,6 +84,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
-require __DIR__.'/auth.php';
+    Route::resource('transactions', TransactionsController::class)->only('index');
+
+    Route::middleware(['admin'])->group(function () {
+        Route::resource('users', UsersController::class);
+        Route::resource('transactions', TransactionsController::class)->only(['edit', 'store', 'update', 'destroy', 'create']);
+        Route::resource('payments', PaymentsController::class);
+        Route::get('reports', [ReportsController::class, 'index'])->name('reports.index');
+    });
+});
