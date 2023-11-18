@@ -59,7 +59,7 @@ payments and generating reports.
 2. Admin creates a transaction using `/api/transactions`.
 3. Admin views transactions using `/api/transactions`.
 4. Admin records payments for a transaction using `/api/payments`.
-5. Admin generates reports using `/api/admin/reports`.
+5. Admin generates reports using `/api/reports`.
 6. Customer logs in using `/api/login`.
 7. Customer views their transactions using `/api/transactions`.
 
